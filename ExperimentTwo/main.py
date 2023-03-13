@@ -1,33 +1,43 @@
 import math
-
+import platform
 from matplotlib import pyplot as plt
 from matplotlib.font_manager import FontProperties
+from rich.console import Console
+console = Console()
+
+
+oldPrint = print
+
+def MyPrint(*args):
+        def func(desc=''):
+            console.print(desc, style="bold red")
+            oldPrint(*args)
+        return func
+
+
+print = MyPrint
 
 
 def ContentOne():
-    print("计算32的阶乘")
-    print(math.factorial(32))
-    print("浮点型比较大小可能会有精度问题")
-    print(0.4 - 0.3 == 0.1)
-    print("使用isclose函数进行浮点型比较")
-    print(math.isclose(0.4 - 0.3, 0.1))
+    print(math.factorial(32))("计算32的阶乘")
+    print(0.4 - 0.3 == 0.1)("浮点型比较大小可能会有精度问题")
+    print(math.isclose(0.4 - 0.3, 0.1))("使用isclose函数进行浮点型比较")
     num = 7
     squreRoot = num ** 0.5
+    print(squreRoot ** 2 == num)("7先开平方在平方是否等于7")
+    print(math.isclose(squreRoot ** 2, num))("使用isclose函数进行浮点型比较")
 
-    print("7先开平方在平方是否等于7")
-    print(squreRoot ** 2 == num)
-    print("使用isclose函数进行浮点型比较")
-    print(math.isclose(squreRoot ** 2, num))
 
-def cni(n,i):
-    minNI = min(i,n-i)
+def cni(n, i):
+    minNI = min(i, n - i)
     result = i
-    for j in range(0,minNI):
-        result = result * (n-j)/(minNI-j)
+    for j in range(0, minNI):
+        result = result * (n - j) / (minNI - j)
     return result
 
+
 def ContentTwo():
-    print(cni(5,2))
+    print(cni(5, 2))
 
 
 def ContentThree():
@@ -38,47 +48,35 @@ Complex is better than complicated.
 Flat is better than nested.
 Sparse is better than dense.
 Readability counts.'''
-    print("计算text的长度")
-    print(len(text))
-    print("计算text中is的个数")
-    print(text.count("is"))
-    print("测试字符串中是否包含beautiful")
-    print("beautiful" in text)
-    print("打印20个=")
-    print("=" * 20)
-    print("字符串连接")
-    print("Good " + "Morning")
+
+    print(len(text))("计算text的长度")
+
+    print(text.count("is"))("计算text中is的个数")
+
+    print("beautiful" in text)("测试字符串中是否包含beautiful")
+
+    print("=" * 20)("打印20个=")
+
+    print("Good " + "Morning")("字符串连接")
 
 
 def ContentFour():
-    print("计算7.9-4.5")
-    print(7.9 - 4.5)
-    print("计算5-3")
-    print(5 - 3)
+    print(7.9 - 4.5)("计算7.9-4.5")
+    print(5 - 3)("计算5-3")
     num = 3
-    print("num取反")
-    print(-num)
-    print("num两次取反")
-    print(--num)
-    print("使用括号限制优先级")
-    print(-(-num))
-    print("计算集合{1,2,3}和{3,4,5}的差集")
-    print({1, 2, 3} - {3, 4, 5})
-    print("计算集合{3,4,5}和{1,2,3}的差集")
-    print({3, 4, 5} - {1, 2, 3})
+    print(-num)("num取反")
+    print(--num)("num两次取反")
+    print(-(-num))("使用括号限制优先级")
+    print({1, 2, 3} - {3, 4, 5})("计算集合{1,2,3}和{3,4,5}的差集")
+    print({3, 4, 5} - {1, 2, 3})("计算集合{3,4,5}和{1,2,3}的差集")
 
 
 def ContentFive():
-    print("计算数字33333和数字55555的乘法")
-    print(33333 * 55555)
-    print("计算复数3+4j和复数5+6j的乘法")
-    print((3 + 4j) * (5 + 6j))
-    print("打印三次\"重要的事情说三遍！\"")
-    print("重要的事情说三遍！" * 3)
-    print("[0]*5")
-    print([0] * 5)
-    print("(0,)*3")
-    print((0,) * 3)
+    print(33333 * 55555)("计算数字33333和数字55555的乘法")
+    print((3 + 4j) * (5 + 6j))("计算复数3+4j和复数5+6j的乘法")
+    print("重要的事情说三遍！" * 3)("打印三次\"重要的事情说三遍！\"")
+    print([0] * 5)("[0]*5")
+    print((0,) * 3)("(0,)*3")
 
 
 def ContentSix():
@@ -161,7 +159,12 @@ def ContentTwelve():
 
 
 def ContentThirteen():
-    font = FontProperties(fname=r"/System/Library/Fonts/STHeiti Light.ttc", size=14)
+    print("绘制条形图")
+    if platform.system() == 'Darwin':
+        font = FontProperties(fname=r"/System/Library/Fonts/STHeiti Light.ttc", size=14)
+    else:
+        font = FontProperties(fname=r"C:\windows\fonts\msyhl.ttc", size=14)
+
     month = list(range(1, 13))
     money = [5.2, 2.7, 5.8, 5.7, 7.3, 9.2, 18.7, 15.6, 20.5, 18.0, 7.8, 6.9]
     for x, y in zip(month, money):
