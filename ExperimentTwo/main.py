@@ -22,13 +22,16 @@ print = MyPrint
 
 
 def ContentOne():
-    print(math.factorial(32))("计算32的阶乘")
-    print(0.4 - 0.3 == 0.1)("浮点型比较大小可能会有精度问题")
-    print(math.isclose(0.4 - 0.3, 0.1))("使用isclose函数进行浮点型比较")
+    print(math.factorial(32))("math.factorial(32) 计算32的阶乘")
+    print(0.4 - 0.3 == 0.1)("0.4 - 0.3 == 0.1 浮点型比较大小可能会有精度问题")
+    print(math.isclose(0.4 - 0.3, 0.1)
+          )("math.isclose(0.4 - 0.3, 0.1) 使用isclose函数进行浮点型比较")
     num = 7
     squreRoot = num ** 0.5
-    print(squreRoot ** 2 == num)("7先开平方在平方是否等于7")
-    print(math.isclose(squreRoot ** 2, num))("使用isclose函数进行浮点型比较")
+    print(squreRoot ** 2 ==
+          num)("num = 7 squreRoot = num ** 0.5 squreRoot ** 2 == num 7先开平方在平方是否等于7")
+    print(math.isclose(squreRoot ** 2, num)
+          )("math.isclose(squreRoot ** 2, num) 使用isclose函数进行浮点型比较")
 
 
 def cni(n, i):
@@ -40,7 +43,7 @@ def cni(n, i):
 
 
 def ContentTwo():
-    print(cni(5, 2))
+    print(cni(5, 2))("计算C52的组合数")
 
 
 def ContentThree():
@@ -51,33 +54,29 @@ Complex is better than complicated.
 Flat is better than nested.
 Sparse is better than dense.
 Readability counts.'''
-
-    print(len(text))("计算text的长度")
-
-    print(text.count("is"))("计算text中is的个数")
-
-    print("beautiful" in text)("测试字符串中是否包含beautiful")
-
-    print("=" * 20)("打印20个=")
-
-    print("Good " + "Morning")("字符串连接")
+    print(text)("打印python圣经")
+    print(len(text))("len(text) 计算text的长度")
+    print(text.count("is"))("text.count('is') 计算text中is的个数")
+    print("beautiful" in text)('"beautiful" in text 测试字符串中是否包含beautiful')
+    print("=" * 20)("'=' * 20 打印20个=")
+    print("Good " + "Morning")("Good+Morning 字符串连接")
 
 
 def ContentFour():
-    print(7.9 - 4.5)("计算7.9-4.5")
-    print(5 - 3)("计算5-3")
+    print(7.9 - 4.5)("7.9 - 4.5 计算7.9-4.5")
+    print(5 - 3)("5 - 3 计算5-3")
     num = 3
-    print(-num)("num取反")
-    print(--num)("num两次取反")
-    print(-(-num))("使用括号限制优先级")
-    print({1, 2, 3} - {3, 4, 5})("计算集合{1,2,3}和{3,4,5}的差集")
-    print({3, 4, 5} - {1, 2, 3})("计算集合{3,4,5}和{1,2,3}的差集")
+    print(-num)("-num num取反")
+    print(--num)("--num num两次取反")
+    print(-(-num))("-(-num) 使用括号限制优先级")
+    print({1, 2, 3} - {3, 4, 5})("{1, 2, 3} - {3, 4, 5} 计算集合{1,2,3}和{3,4,5}的差集")
+    print({3, 4, 5} - {1, 2, 3})("{3, 4, 5} - {1, 2, 3} 计算集合{3,4,5}和{1,2,3}的差集")
 
 
 def ContentFive():
-    print(33333 * 55555)("计算数字33333和数字55555的乘法")
-    print((3 + 4j) * (5 + 6j))("计算复数3+4j和复数5+6j的乘法")
-    print("重要的事情说三遍！" * 3)("打印三次\"重要的事情说三遍！\"")
+    print(33333 * 55555)("33333 * 55555 计算数字33333和数字55555的乘法")
+    print((3 + 4j) * (5 + 6j))("(3 + 4j) * (5 + 6j) 计算复数3+4j和复数5+6j的乘法")
+    print("重要的事情说三遍！" * 3)("'重要的事情说三遍！' * 3 打印三次\"重要的事情说三遍！\"")
     print([0] * 5)("[0]*5 生成一个长度为5的列表，列表中的元素都是0")
     print((0,) * 3)("(0,)*3 生成一个长度为3的元组，元组中的元素都是0")
 
@@ -104,18 +103,24 @@ def ContentEight():
     print(3 == 3 < 5)("3 == 3 < 5 相当于 3==3 and 3<5 ")
     print('12345' > '23456')("'12345' > '23456' 字符串比较大小 依次比较每个字符的ASCII码值")
     print('abcd' > 'Abcd')("'abcd' > 'Abcd' 字符串比较大小 依次比较每个字符的ASCII码值")
-    print([85, 92, 73, 84] < [91, 82, 73])("[85, 92, 73, 84] < [91, 82, 73] 列表比较大小 依次比较每个元素的大小")
-    print([180, 90, 101] > [180, 90, 99])("[180, 90, 101] > [180, 90, 99] 列表比较大小 依次比较每个元素的大小")
-    print({1, 2, 3, 4} > {3, 4, 5})("{1, 2, 3, 4} > {3, 4, 5} 集合比较 第一个不是第二个的超集")
-    print({1, 2, 3, 4} <= {3, 4, 5})("{1, 2, 3, 4} <= {3, 4, 5} 集合比较 第一个不是第二个的子集")
-    print([1, 2, 3, 4] > [1, 2, 3])("[1, 2, 3, 4] > [1, 2, 3] 列表比较前三个元素相同，第一个列表有多余元素 ")
+    print([85, 92, 73, 84] < [91, 82, 73])(
+        "[85, 92, 73, 84] < [91, 82, 73] 列表比较大小 依次比较每个元素的大小")
+    print([180, 90, 101] > [180, 90, 99])(
+        "[180, 90, 101] > [180, 90, 99] 列表比较大小 依次比较每个元素的大小")
+    print({1, 2, 3, 4} > {3, 4, 5})(
+        "{1, 2, 3, 4} > {3, 4, 5} 集合比较 第一个不是第二个的超集")
+    print({1, 2, 3, 4} <= {3, 4, 5})(
+        "{1, 2, 3, 4} <= {3, 4, 5} 集合比较 第一个不是第二个的子集")
+    print([1, 2, 3, 4] > [1, 2, 3])(
+        "[1, 2, 3, 4] > [1, 2, 3] 列表比较前三个元素相同，第一个列表有多余元素 ")
 
 
 def ContentNine():
     print(60 in [70, 60, 50, 80])("60 in [70, 60, 50, 80] 列表中是否包含60")
     print('abc' in 'a1b2cdfg')("'abc' in 'a1b2cdfg' 字符串中是否包含abc")
     print([3] in [[3], [4], [5]])("[3] in [[3], [4], [5]] 列表中是否包含[3]")
-    print('3' in map(str, range(5)))("'3' in map(str, range(5)) 将range(5)的结果依次str操作 然后检测'3'在不在其中 ")
+    print('3' in map(str, range(5)))(
+        "'3' in map(str, range(5)) 将range(5)的结果依次str操作 然后检测'3'在不在其中 ")
     print(5 in range(5))("5 in range(5) 检测5是否在range(5)中")
 
 
@@ -146,19 +151,22 @@ def ContentEleven():
 
 
 def ContentTwelve():
-    print(list(), tuple(), dict(), set())("list(), tuple(), dict(), set() 依次调用构造函数")
+    print(list(), tuple(), dict(), set())(
+        "list(), tuple(), dict(), set() 依次调用构造函数")
     s = {3, 2, 1, 4}
     print(list(s), tuple(s))("list(s), tuple(s) 类型转换 集合转列表和元组")
     lst = [1, 1, 2, 2, 3, 4]
     print(tuple(lst), set(lst))("tuple(lst), set(lst) 类型转换 列表转元组和集合 然后集合自动去重")
     print(list(str(lst)))("list(str(lst)) 列表先转字符串再转列表")
-    print(dict(name="Dong", sex="Male", age=41))('dict(name="Dong", sex="Male", age=41) 打印这个字典')
+    print(dict(name="Dong", sex="Male", age=41))(
+        'dict(name="Dong", sex="Male", age=41) 打印这个字典')
 
 
 def ContentThirteen():
     print("绘制条形图")()
     if platform.system() == 'Darwin':
-        font = FontProperties(fname=r"/System/Library/Fonts/STHeiti Light.ttc", size=14)
+        font = FontProperties(
+            fname=r"/System/Library/Fonts/STHeiti Light.ttc", size=14)
     else:
         font = FontProperties(fname=r"C:\windows\fonts\msyhl.ttc", size=14)
 
