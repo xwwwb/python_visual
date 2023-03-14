@@ -4,6 +4,7 @@ import platform
 from matplotlib import pyplot as plt
 from matplotlib.font_manager import FontProperties
 from rich.console import Console
+from fractions import Fraction
 
 console = Console()
 
@@ -36,14 +37,16 @@ def ContentOne():
 
 def cni(n, i):
     minNI = min(i, n - i)
-    result = i
+    # result = i
+    result = 1
     for j in range(0, minNI):
-        result = result * (n - j) / (minNI - j)
+        result = Fraction(result * (n - j), (minNI - j))
+        # result = result * (n - j) / (minNI - j)
     return result
 
 
 def ContentTwo():
-    print(cni(5, 2))("计算C52的组合数")
+    print(cni(5, 2))("计算C52的组合数 算法的改进放到最下面讲解")
 
 
 def ContentThree():
