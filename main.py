@@ -1,9 +1,9 @@
 import os
 
-fileList = ["ExperimentOne", "ExperimentTwo"]
+fileList = ["ExperimentOne", "ExperimentTwo","ExperimentThree"]
 
-default = 0
-# default = 2 # 默认要执行的实验
+#default = 0
+default = 3 # 默认要执行的实验
 
 if not default:
     while True:
